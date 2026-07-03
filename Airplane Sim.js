@@ -31,7 +31,7 @@ function Plane({ aircraft, airline }) {
   });
 
   return (
-    <mesh ref={ref}>
+    <mesh ref={ref} position={[0, 5, 50]}>
       <boxGeometry args={[1, 0.3, 2]} />
       <meshStandardMaterial color={getAirlineColor()} />
     </mesh>
