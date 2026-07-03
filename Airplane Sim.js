@@ -9,6 +9,17 @@ function Plane({ aircraft, airline }) {
 
   const speed = aircraft === "Cessna" ? 0.15 : 0.3;
 
+  const getAirlineColor = () => {
+    switch (airline) {
+      case "United":
+        return "dodgerblue";
+      case "Delta":
+        return "red";
+      default:
+        return "white";
+    }
+  };
+
   useFrame(() => {
     if (!ref.current) return;
 
@@ -22,15 +33,7 @@ function Plane({ aircraft, airline }) {
   return (
     <mesh ref={ref}>
       <boxGeometry args={[1, 0.3, 2]} />
-      <meshStandardMaterial
-        color={
-          airline === "United"
-            ? "dodgerblue"
-            : airline === "Delta"
-            ? "red"
-            : "white"
-        }
-      />
+      <meshStandardMaterial color={getAirlineColor()} />
     </mesh>
   );
 }
@@ -64,7 +67,7 @@ function World() {
         <meshStandardMaterial color="lightblue" />
       </mesh>
 
-      {/* “Golden Gate Bridge” */}
+      {/* "Golden Gate Bridge" */}
       <mesh position={[0, 2, -20]}>
         <boxGeometry args={[15, 0.5, 1]} />
         <meshStandardMaterial color="red" />
