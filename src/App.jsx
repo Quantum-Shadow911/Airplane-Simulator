@@ -89,10 +89,12 @@ function UI({ aircraft, setAircraft, airline, setAirline }) {
         top: 10,
         left: 10,
         zIndex: 10,
-        background: "white",
+        background: "rgba(30, 30, 30, 0.85)",
         padding: 10,
         borderRadius: 8,
-        fontFamily: "sans-serif"
+        fontFamily: "sans-serif",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+        color: "white"
       }}
     >
       <h3>✈️ Airplane Simulator</h3>
